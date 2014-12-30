@@ -32,12 +32,13 @@ We want this to be a community project we all rally behind and keep up to date, 
 
 ### Booting up with Docker
 
-1. Install docker ([See Docs](https://docs.docker.com/installation/#installation))
-2. Start redis with `docker run -d -p 6379:6379 --name redis redis:2.8.13`
-3. Start the website with `docker run -p 8080:8080 --link=redis:redis amsterdamphp/amsterdamphp-website`
-4. In parameters.yml set meetup_key value to your meetup.com API key. Set group_urlname to amsterdamphp
-5. In your browser visit 127.0.0.1:8080 (or the ip that boot2docker has if on Mac OSX)
-6. Code!
+1. In parameters.yml set meetup_key value to your meetup.com API key. Set group_urlname to amsterdamphp. Also, set redis_dsn to redis://redis:6379.
+2. Install docker ([See Docs](https://docs.docker.com/installation/#installation))
+3. Start redis with `docker run -d -p 6379:6379 --name redis redis`
+4. Build the website with `docker build -t amsterdamphp/amsterdamphp-website .`
+5. Start the website with `docker run -p 8080:8080 --link=redis:redis amsterdamphp/amsterdamphp-website`
+6. In your browser visit 127.0.0.1:8080 (or the ip that boot2docker has if on Mac OSX)
+7. Code!
 
 ### Booting up Vagrant Box
 
