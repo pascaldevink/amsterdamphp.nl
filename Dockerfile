@@ -10,9 +10,11 @@ ADD entrypoint.sh /entrypoint.sh
 ADD ./ /var/www/
 WORKDIR /var/www/
 
-RUN rm -rf /var/www/app/logs
-RUN mkdir -p /var/www/app/logs
+RUN rm -rf /var/www/app/logs /var/www/app/cache
+RUN mkdir -p /var/www/app/logs /var/www/app/cache
 RUN chmod -R 777 /var/www/app/cache /var/www/app/logs
+
+RUN composer install
 
 EXPOSE 8080
 
