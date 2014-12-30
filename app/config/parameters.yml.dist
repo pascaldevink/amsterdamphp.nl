@@ -6,6 +6,8 @@ parameters:
     database_user:     root
     database_password: ~
 
+    redis_dsn:         redis://localhost:6379
+
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
@@ -16,4 +18,4 @@ parameters:
 
     meetup_key:
     akismet_key:
-    group_urlname:
+    group_urlname:     amsterdamphp
